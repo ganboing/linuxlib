@@ -1,0 +1,14 @@
+LIBPERFTOOL_0.0.1 {
+	global:
+		libperf_init;
+		perf_session__tool;
+		perf_session__new;
+		__perf_session__new;
+		perf_session__delete;
+		perf_session__process_events;
+		perf_debug_setup;
+		dump_trace;
+		main;
+	local:
+		*;
+};

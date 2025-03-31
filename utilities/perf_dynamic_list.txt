@@ -1,0 +1,3 @@
+{
+   __lsan_default_suppressions;
+};

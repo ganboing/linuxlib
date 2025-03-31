@@ -1,0 +1,12 @@
+#ifndef LINUXLIB_PERF_REGS_H
+#define LINUXLIB_PERF_REGS_H
+
+#ifndef __x86_64__
+#error "only x64 is supported"
+#endif
+
+#ifdef __x86_64__
+#include "arch_x86_perf_regs.h"
+#endif
+
+#endif //LINUXLIB_PERF_REGS_H
