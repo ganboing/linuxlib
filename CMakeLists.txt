@@ -35,8 +35,18 @@ set(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "${CMAKE_SHARED_LIBRARY_LINK_C_FLAGS} -Wl,
 message("CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS = ${CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS}, will be mitigated")
 set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS "${CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS} -Wl,--no-export-dynamic")
 
-cmake_policy(SET CMP0074 NEW)
+option(PERFTOOL "Enable perftool" ON)
+option(UTIL "Enable utilities" ON)
+option(NET "Enable network capture utilities" OFF)
 
-add_subdirectory(perftool)
-add_subdirectory(utilities)
-add_subdirectory(net)
+if (PERFTOOL)
+  add_subdirectory(perftool)
+endif (PERFTOOL)
+
+if (UTIL)
+  add_subdirectory(utilities)
+endif (UTIL)
+
+if (NET)
+  add_subdirectory(net)
+endif (NET)
